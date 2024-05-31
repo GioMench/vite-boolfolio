@@ -14,6 +14,16 @@ export default {
   },
   methods: {
 
+    nextPage(url){
+      console.log(url);
+      this.callApi(url)
+    },
+
+    prevPage(url){
+      console.log(url);
+      this.callApi(url)
+    },
+
     callApi(url) {
       axios
         .get(url)
@@ -59,19 +69,19 @@ export default {
 
       <nav aria-label="Page navigation">
         <ul class="pagination">
-          <li class="page-item" v-show="projects.prev_page_url">
-            <a class="page-link" href="#" aria-label="Previous">
+          <li class="page-item" v-show="projects.prev_page_url" @click="prevPage(projects.prev_page_url)">
+            <button class="page-link" href="#" aria-label="Previous">
               <span aria-hidden="true">&laquo;</span>
-            </a>
+            </button>
           </li>
 
-          <li class="page-item" :class="{ 'active': page == projects.current_page}"  aria-current="page" v-for="page in projects.last_page"><a class="page-link" href="#">{{ page }}</a></li>
+          <li class="page-item" :class="{ 'active': page == projects.current_page}" v-for="page in projects.last_page"><a class="page-link" href="#">{{ page }}</a></li>
           
 
-          <li class="page-item" v-show="projects.prev_page_url">
-            <a class="page-link" href="#" aria-label="Next">
+          <li class="page-item" v-show="projects.next_page_url" @click="nextPage(projects.next_page_url)">
+            <button class="page-link" href="#" aria-label="Next">
               <span aria-hidden="true">&raquo;</span>
-            </a>
+            </button>
           </li>
         </ul>
       </nav>
