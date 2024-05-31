@@ -14,18 +14,19 @@ export default {
   },
   methods: {
 
-    goTo(page){
+    goTo(page) {
       const url = this.base_api_url + this.base_projects_url + `?page=${page}`
+      //console.log(url)
       this.callApi(url)
     },
 
-    nextPage(url){
-      console.log(url);
+    nextPage(url) {
+      //console.log(url);
       this.callApi(url)
     },
 
-    prevPage(url){
-      console.log(url);
+    prevPage(url) {
+      //console.log(url);
       this.callApi(url)
     },
 
@@ -51,7 +52,23 @@ export default {
 
 <template>
 
-  <header>header</header>
+  <header>
+    <nav class="main_menu">
+      <div class="container">
+
+        <div class="logo">logo</div>
+
+        <div class="right-menu">
+          <a href="/">Home</a>
+          <a href="/blog">Blog</a>
+          <a href="/about">About</a>
+          <a href="/contacts">Contacts</a>
+        </div>
+
+      </div>
+
+    </nav>
+  </header>
   <main>
     <div class="container">
       <div class="row" v-if="!loading">
@@ -66,8 +83,6 @@ export default {
 
           </div>
 
-
-
         </div>
       </div>
       <div class="row" v-else>
@@ -76,18 +91,19 @@ export default {
         </div>
       </div>
 
-      <nav aria-label="Page navigation">
-        <ul class="pagination">
+      <nav class="pagination" aria-label="Page navigation">
+        <ul>
           <li class="page-item" v-show="projects.prev_page_url" @click="prevPage(projects.prev_page_url)">
             <button class="page-link" href="#" aria-label="Previous">
               <span aria-hidden="true">&laquo;</span>
             </button>
           </li>
 
-          <li class="page-item" :class="{ 'active': page == projects.current_page}" v-for="page in projects.last_page" @click="goTo(page)">
+          <li class="page-item" :class="{ 'active': page == projects.current_page }" v-for="page in projects.last_page"
+            @click="goTo(page)">
             <button class="page-link" href="#">{{ page }}</button>
           </li>
-          
+
 
           <li class="page-item" v-show="projects.next_page_url" @click="nextPage(projects.next_page_url)">
             <button class="page-link" href="#" aria-label="Next">
