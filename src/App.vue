@@ -14,6 +14,11 @@ export default {
   },
   methods: {
 
+    goTo(page){
+      const url = this.base_api_url + this.base_projects_url + `?page=${page}`
+      this.callApi(url)
+    },
+
     nextPage(url){
       console.log(url);
       this.callApi(url)
@@ -49,7 +54,7 @@ export default {
   <header>header</header>
   <main>
     <div class="container">
-      <div class="row">
+      <div class="row" v-if="!loading">
         <div class="col" v-for="project in projects.data">
           <div class="card">
 
@@ -57,13 +62,17 @@ export default {
 
             <div class="card-body">
               <h3>{{ project.project_name }}</h3>
-
-
             </div>
+
           </div>
 
 
 
+        </div>
+      </div>
+      <div class="row" v-else>
+        <div class="col">
+          Loading...
         </div>
       </div>
 
@@ -75,7 +84,9 @@ export default {
             </button>
           </li>
 
-          <li class="page-item" :class="{ 'active': page == projects.current_page}" v-for="page in projects.last_page"><a class="page-link" href="#">{{ page }}</a></li>
+          <li class="page-item" :class="{ 'active': page == projects.current_page}" v-for="page in projects.last_page" @click="goTo(page)">
+            <button class="page-link" href="#">{{ page }}</button>
+          </li>
           
 
           <li class="page-item" v-show="projects.next_page_url" @click="nextPage(projects.next_page_url)">
