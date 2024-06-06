@@ -39,9 +39,7 @@ export default {
           this.projects = response.data.projects
           this.loading = false
         })
-        .catch(err => {
-          console.error(err);
-        })
+        
     }
   },
   mounted() {
