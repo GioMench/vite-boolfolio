@@ -19,11 +19,17 @@ export default {
         axios.get(url)
             .then(response => {
                 console.log(response)
-                console.log(response.data.response)
-                this.project = response.data.response
-                this.loading = false
-                console.log(this.project)
+                if (response.data.response) {
+                    //console.log(response.data.response)
+                    this.project = response.data.response
+                    this.loading = false
+                    //console.log(this.project)
+                } else {
+                    this.$router.push({name:'not-found'})
+                }
 
+            }).catch(err => {
+                console.error(err)
             })
 
 
@@ -33,7 +39,7 @@ export default {
 </script>
 
 <template>
-    
+
     <template v-if="project">
 
         <div class="card">
