@@ -2,82 +2,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
+
 
 /*region common*/
 body {
-  background-color: rgba(7, 7, 17, 0.963);
+  background-color: rgb(0, 0, 0);
 }
 
 img {
   max-width: 100%;
 }
 
-.card {
-  background-color: white;
-  .card-body {
-    padding: 0.5rem;
-  }
-}
-
-/*region layout*/
-.container {
-  width: 80%;
-  max-width: 1176px;
-  margin: auto;
-
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -1rem;
-
-    .col {
-      width: 100%;
-      padding: 1rem;
-
-      @media (min-width: 600px) {
-        width: 50%;
-      }
-      @media (min-width: 992px) {
-        width: calc(100% / 12 * 4);
-      }
-      @media (min-width: 1200px) {
-        width: calc(100% / 12 * 3);
-      }
-    }
-  }
-}
-
-/*region pagination*/
-
-nav.pagination {
-  & ul {
-    list-style: none;
-    display: flex;
-    gap: 0.25rem;
-  }
-}
 /*region header*/
+.menu_link{
+ text-decoration: none;
+ color: white;
 
-header{
-  .main_menu{
-   padding: 0.75rem;
-   color: white;
-    .container{ 
-      display: flex;
-      justify-content: space-between;
-    }
-    .right-menu{
-      & a{
-        padding: 0.5rem;
-        text-decoration: none;
-        color: white;
-    }
-    }
-
-    
-    
-  }
 }
+
 /*region main*/
 /*region footer*/

@@ -25,7 +25,7 @@ export default {
                     this.loading = false
                     //console.log(this.project)
                 } else {
-                    this.$router.push({name:'not-found'})
+                    this.$router.push({ name: 'not-found' })
                 }
 
             }).catch(err => {
@@ -44,12 +44,15 @@ export default {
 
         <div class="card">
 
+            <div class="col-4">
+                <img :src="base_api_url + 'storage/' + project.preview_image" alt="">
 
-            <img :src="base_api_url + 'storage/' + project.preview_image" alt="">
-
-            <div class="card-body">
-                <h3>{{ project.project_name }}</h3>
+                <div class="card-body">
+                    <h3>{{ project.project_name }}</h3>
+                </div>
             </div>
+
+
 
         </div>
     </template>

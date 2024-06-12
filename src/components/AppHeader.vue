@@ -30,14 +30,18 @@ export default {
 
 <template>
   <header>
-    <nav class="main_menu">
-      <div class="container">
+    <nav class="navbar">
+      <div class="container d-flex justify-content-between">
 
-        <div class="logo">logo</div>
+        <div class="logo">
+          <img src="/public/gmlogo.svg" alt="g/m personal logo" width="80px">
+        </div>
 
-        <div class="right-menu">
-          <router-link :to="{ name: item.route }" v-for="item in menu">{{item.text}}</router-link>
-          
+        <div class="right-menu ">
+
+          <router-link :to="{ name: item.route }" v-for="item in menu" class="menu_link px-3">{{ item.text
+            }}</router-link>
+
         </div>
 
       </div>
@@ -46,6 +50,4 @@ export default {
   </header>
 </template>
 
-  <style scoped>
-
-  </style>
+<style scoped></style>
