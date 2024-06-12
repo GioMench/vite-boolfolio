@@ -6,7 +6,7 @@ import AppHeader from './components/AppHeader.vue';
 
 export default {
   name: 'App',
-  components:{
+  components: {
     AppHeader
   }
 }
@@ -16,14 +16,15 @@ export default {
 
 <template>
 
- <AppHeader/>
+  <div class="d-flex">
+    <AppHeader class="col"></AppHeader>
 
 
-  <main>
-    <RouterView />
+    <main class="col">
+      <RouterView />
 
-  </main>
-  
+    </main>
+  </div>
 </template>
 
 <style></style>

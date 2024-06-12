@@ -1,15 +1,19 @@
 <script>
 export default {
- name: 'AppHome'
+    name: 'AppHome',
+   
 }
 </script>
 
 <template>
-    <h1>home</h1>
+
+
+<h1>about me</h1>
+
 </template>
 
 <style>
-h1{
+h1 {
     color: white;
 }
 </style>

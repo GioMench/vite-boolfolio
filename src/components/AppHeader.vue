@@ -5,8 +5,8 @@ export default {
     return {
       menu: [
         {
-          'text': 'Home',
-          'route': 'home'
+          'text': 'Welcome',
+          'route': 'welcome'
         },
         {
           'text': 'Projects',
@@ -17,7 +17,7 @@ export default {
           'route': 'contacts'
         },
         {
-          'text': 'About',
+          'text': 'About Me',
           'route': 'about'
         }
 
@@ -28,26 +28,27 @@ export default {
 }
 </script>
 
+
 <template>
-  <header>
-    <nav class="navbar">
-      <div class="container d-flex justify-content-between">
 
-        <div class="logo">
-          <img src="/public/gmlogo.svg" alt="g/m personal logo" width="80px">
-        </div>
 
-        <div class="right-menu ">
+  <div class="p-5" style="height: 100vh; margin: auto;">
 
-          <router-link :to="{ name: item.route }" v-for="item in menu" class="menu_link px-3">{{ item.text
-            }}</router-link>
+    <div class="container-fluid ">
 
-        </div>
-
+      <img src="/public/logo-ok.svg" alt="my logo with name" width="450px">
+      <div class="navbar">
+        <router-link :to="{ name: item.route }" v-for="item in menu" class="menu_link px-3">{{ item.text
+          }}</router-link>
       </div>
+    </div>
 
-    </nav>
-  </header>
+  </div>
+
+
+
+
+
 </template>
 
 <style scoped></style>

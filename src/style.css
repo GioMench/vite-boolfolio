@@ -23,4 +23,11 @@ img {
 }
 
 /*region main*/
+.my_text{
+  position: relative;
+  z-index: 3;
+}
+
+
+
 /*region footer*/
