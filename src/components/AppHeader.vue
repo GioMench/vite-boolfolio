@@ -36,9 +36,9 @@ export default {
 
     <div class="container-fluid ">
 
-      <img src="/public/logo-ok.svg" alt="my logo with name" width="450px">
-      <div class="navbar">
-        <router-link :to="{ name: item.route }" v-for="item in menu" class="menu_link px-3">{{ item.text
+      <img src="/public/logo-ok.svg" alt="my logo with name" style="display: block; max-width:600px;margin: auto;">
+      <div class="navbar py-5 " style="max-width: 500px; margin: auto;">
+        <router-link :to="{ name: item.route }" v-for="item in menu" class="menu_link px-2 py-3 text-uppercase fw-light" style="font-size: 10px;">{{ item.text
           }}</router-link>
       </div>
     </div>

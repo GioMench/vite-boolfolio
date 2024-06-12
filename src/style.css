@@ -16,10 +16,14 @@ img {
 }
 
 /*region header*/
+
 .menu_link{
  text-decoration: none;
  color: white;
-
+ transition: 0.3s;
+ &:hover{
+  text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 7px #fff, 0 0 9px #fff, 0 0 11px #fff, 0 0 13px #fff, 0 0 15px #fff;
+ }
 }
 
 /*region main*/
