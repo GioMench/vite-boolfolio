@@ -5,7 +5,10 @@ export default {
 </script>
 
 <template>
-    <h1>about</h1>
+   <div class="container">
+    ti racconto di me 
+    
+   </div>
 </template>
 
 <style>

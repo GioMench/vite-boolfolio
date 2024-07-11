@@ -16,14 +16,16 @@ export default {
 
 <template>
 
-  <div class="d-flex">
-    <AppHeader class="col"></AppHeader>
+  <div class="container-fluid">
+    <div class="row gap-5">
+      <AppHeader class="col-3 "></AppHeader>
 
 
-    <main class="col">
-      <RouterView />
+      <main class="col">
+        <RouterView />
 
-    </main>
+      </main>
+    </div>
   </div>
 </template>
 
